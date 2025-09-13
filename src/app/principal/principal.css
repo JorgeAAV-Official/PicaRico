@@ -1,0 +1,136 @@
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Asegurar fondo completo */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+/* Header */
+.hero {
+  background: linear-gradient(90deg, #ff4d4d, #ff9933);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  border-bottom: 4px solid #ffcc00;
+  width: 100%;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffe066;
+}
+
+/* Main content */
+.content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  color: #d62828;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1.1rem;
+}
+
+.spicy {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.sweet {
+  color: #ff9f1c;
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(90deg, #ff4d4d, #ff9933);
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Cards */
+.highlight {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h3 {
+  color: #d62828;
+  margin-bottom: 0.8rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Footer */
+footer {
+  background: #2c2c2c;
+  color: #f8f8f8;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  width: 100%;
+}

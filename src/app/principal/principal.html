@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>PicaRico</title>
+  <link rel="stylesheet" href="principal.css">
+</head>
+<body>
+  <header class="hero">
+    <h1 class="logo">🍬🔥 PicaRico 🔥🍬</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Promociones</a></li>
+        <li><a [routerLink]="['/contacto']">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="intro">
+      <h2>El dulce que enciende tus sentidos</h2>
+      <p>
+        Nuestras gomitas combinan lo mejor de lo <span class="spicy">picante</span> 
+        y lo más delicioso de lo <span class="sweet">dulce</span>.  
+        ¡Una explosión de sabor que no podrás olvidar!
+      </p>
+      <a href="#" class="btn">¡Quiero probar!</a>
+    </section>
+
+    <section class="highlight">
+      <div class="card">
+        <h3>🔥 Intensidad</h3>
+        <p>Para los amantes del picante extremo.</p>
+      </div>
+      <div class="card">
+        <h3>🍭 Dulzura</h3>
+        <p>Equilibrio perfecto para todos los gustos.</p>
+      </div>
+      <div class="card">
+        <h3>🌈 Variedad</h3>
+        <p>Colores, sabores y experiencias únicas.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 PicaRico. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
