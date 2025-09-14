@@ -3,71 +3,142 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+  color: #f0f0f0; 
 }
 
-/* Asegurar fondo completo */
+/* El fondo principal ahora es la imagen de las gomitas */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100%;
-  background: linear-gradient(135deg, #ffecd2, #fcb69f);
-  color: #2c2c2c;
+  min-height: 100vh;
+  background-color: #0d0d0d;
   line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  background: url('/assets/goma.jpg') no-repeat center center fixed;
+  background-size: cover; 
+}
+
+/* Capa de degradado y desenfoque sobre el fondo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 26, 26, 0.8));
+  backdrop-filter: blur(8px); 
+  z-index: -1;
 }
 
 /* Header */
 .hero {
-  background: linear-gradient(90deg, #ff4d4d, #ff9933);
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-  border-bottom: 4px solid #ffcc00;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1.5rem 2rem; 
+  box-shadow: 0 3px 10px rgba(0,0,0,0.7);
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #ff4d4d;
+  backdrop-filter: blur(5px);
 }
 
-.logo {
-  font-size: 2.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 60px; 
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+.logo-text {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: white;
+  color: #f0f0f0;
   font-weight: 600;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+  padding-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
 }
 
-.nav-links a:hover {
-  color: #ffe066;
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ff9f1c;
+  transform: translateY(-3px);
+  text-shadow: 0 0 5px #ff9f1c, 0 0 10px #ff9f1c;
+  border-bottom: 2px solid #ff9f1c;
 }
 
 /* Main content */
 .content {
-  padding: 2rem;
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-.intro h2 {
-  font-size: 2rem;
-  color: #d62828;
+.intro {
+  margin-top: 2rem;
+  padding: 2.5rem;
+  border-radius: 10px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.section-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 2.5rem;
+  color: #ff4d4d;
   margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #ff4d4d;
 }
 
-.intro p {
-  max-width: 600px;
-  margin: 0 auto 1.5rem auto;
-  font-size: 1.1rem;
+.section-description {
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.8;
 }
 
 .spicy {
@@ -83,12 +154,32 @@ html, body {
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: linear-gradient(90deg, #ff4d4d, #ff9933);
+  background: linear-gradient(90deg, #e63946, #ff9f1c);
   color: white;
   font-weight: bold;
   border-radius: 30px;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: 0.5s;
+  transform: skewX(-20deg);
+  z-index: -1;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn:hover {
@@ -96,41 +187,156 @@ html, body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Cards */
+/* Cards (Estilos corregidos y mejorados) */
 .highlight {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .card {
-  background: white;
+  background: #2c2c2c;
   padding: 1.5rem;
   border-radius: 15px;
-  width: 250px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent; /* Borde base transparente para el efecto */
+}
+
+/* Efecto hover general para todas las tarjetas */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
 
 .card h3 {
-  color: #d62828;
+  font-family: 'Poppins', sans-serif;
+  color: #ff4d4d; 
   margin-bottom: 0.8rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 5px #ff4d4d;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+.card p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos específicos para cada tarjeta */
+
+/* Tarjeta de Intensidad 🔥 */
+.card-intensidad {
+  border-image: linear-gradient(45deg, #e63946, #ff9f1c) 1;
+  border-image-slice: 1;
+}
+.card-intensidad h3 {
+  color: #ff4d4d;
+  text-shadow: 0 0 8px rgba(255, 77, 77, 0.7);
+}
+.card-intensidad:hover {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+}
+
+
+/* Tarjeta de Dulzura 🍬 */
+.card-dulzura {
+  border-image: linear-gradient(45deg, #ff9f1c, #e63946) 1;
+  border-image-slice: 1;
+}
+.card-dulzura h3 {
+  color: #ff9f1c;
+  text-shadow: 0 0 8px rgba(255, 159, 28, 0.7);
+}
+.card-dulzura:hover {
+  border-color: #ff9f1c;
+  box-shadow: 0 0 20px rgba(255, 159, 28, 0.5);
+}
+
+/* Tarjeta de Variedad ✨ */
+.card-variedad {
+  border-image: linear-gradient(45deg, #e63946, #ff9f1c, #9d4edd) 1;
+  border-image-slice: 1;
+}
+.card-variedad h3 {
+  background: -webkit-linear-gradient(45deg, #ff4d4d, #ff9f1c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+.card-variedad:hover {
+  border-color: #9d4edd;
+  box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
 }
 
 /* Footer */
-footer {
-  background: #2c2c2c;
+.main-footer {
+  background: #000;
   color: #f8f8f8;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: 2rem;
   font-size: 0.9rem;
   width: 100%;
+  border-top: 1px solid #222;
+}
+
+/* Redes sociales en el lateral izquierdo */
+.side-social-icons {
+  position: fixed;
+  bottom: 2rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column; 
+  gap: 1.5rem;
+  z-index: 900;
+}
+
+.side-social-icons .social-icon {
+  color: #f0f0f0;
+  font-size: 1.8rem;
+  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+}
+
+.side-social-icons .social-icon:hover {
+  color: #ff9f1c;
+  transform: translateY(-3px) scale(1.1);
+  text-shadow: 0 0 10px #ff9f1c;
+}
+
+/* Ocultar iconos del footer */
+.main-footer .social-icons {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .logo-text {
+    font-size: 1.8rem;
+  }
+  .highlight {
+    grid-template-columns: 1fr;
+  }
+  .side-social-icons {
+    bottom: 0;
+    left: 0;
+    flex-direction: row; 
+    width: 100%;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 0;
+  }
 }
