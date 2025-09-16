@@ -1,2 +1,141 @@
-<p>productos works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Pica Rico</title>
+    <link rel="stylesheet" href="productos.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="assets/logo1.png" alt="PicaRico Logo" class="logo-img">
+                <h1 class="logo-text">PicaRico</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a [routerLink]="['/principal']">Inicio</a></li>
+                    <li><a [routerLink]="['/productos']" class="active">Productos</a></li>
+                    <li><a [routerLink]="['/promociones']">Promociones</a></li>
+                    <li><a [routerLink]="['/contacto']">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <main class="content">
+        <section class="section-hero">
+            <h2 class="section-title">NUESTROS PRODUCTOS</h2>
+            <p class="section-description">
+                Descubre un universo de sabores únicos. Cada gomita y cada mezcla son una obra de arte creada para
+                desafiar tus sentidos. ¡Encuentra tu favorita!
+            </p>
+        </section>
+
+        <section class="category-section">
+            <h3 class="category-title">🍬 Categoría Clásica</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h4>Equilibradas</h4>
+                    <span class="product-price">Pequeña $3.500 / Mediana $5.500 / Grande $12.000</span>
+                    <p>Gomitas bañadas en chamoy y tajín en la medida perfecta: dulces, picanticas y refrescantes.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20unas%20Gomitas%20Equilibradas.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-tint"></i></div>
+                    <h4>Mojadas</h4>
+                    <span class="product-price">Pequeña $4.500 / Mediana $6.500 / Grande $14.000</span>
+                    <p>Gomitas bañadas con una capa extra de chamoy y un toque de tajín. Más jugosas, más intensas.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20unas%20Gomitas%20Mojadas.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-fire"></i></div>
+                    <h4>Empolvadas</h4>
+                    <span class="product-price">Pequeña $6.000 / Mediana $8.500 / Grande $16.000</span>
+                    <p>Gomitas cubiertas con abundante tajín y chamoy, con un acabado seco y muy sabrosito.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20unas%20Gomitas%20Empolvadas.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h3 class="category-title">🎁 Edición Detalle</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-gift"></i></div>
+                    <h4>Explosiva Feliz</h4>
+                    <span class="product-price">Pa’ Consentir $20.000 / Pa’ Sorprender $22.000</span>
+                    <p>Vasito con mango fresco, gomitas enchiladas, chamoy y tajín. Decoración especial para regalo.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20una%20Explosiva%20Feliz.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-box-open"></i></div>
+                    <h4>Cajita Feliz</h4>
+                    <span class="product-price">Pa’ Consentir $28.000 / Pa’ Sorprender $30.000</span>
+                    <p>Cajita con mango, manzana, gomitas enchiladas, chamoy y tajín. Decorada y perfecta para ocasiones especiales.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20una%20Cajita%20Feliz.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-cocktail"></i></div>
+                    <h4>Michelada</h4>
+                    <span class="product-price">$18.000</span>
+                    <p>Bebida con mango, limón, gomitas enchiladas, perlas, chamoy y tajín. Refrescante, dulce y picosita.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20una%20Michelada.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h3 class="category-title">🌈 Edición Especial</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-tray"></i></div>
+                    <h4>Mix Sabrosito</h4>
+                    <span class="product-price">$48.000</span>
+                    <p>Bandeja grande con secciones de gomitas variadas, mango, limón, chamoy y tajín. Ideal para compartir.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20un%20Mix%20Sabrosito.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-candy-cane"></i></div>
+                    <h4>Pica Gomy</h4>
+                    <span class="product-price">$32.000</span>
+                    <p>Bandeja con mango, limón, gomitas, chamoy y tajín, decorada con moño.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20una%20Pica%20Gomy.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-apple-alt"></i></div>
+                    <h4>Solo Fruty</h4>
+                    <span class="product-price">$20.000</span>
+                    <p>Vasito con mango o manzana, limón, chamoy y tajín. Refrescante y frutal.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20un%20Solo%20Fruty.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+                <div class="product-card">
+                    <div class="card-icon"><i class="fas fa-lemon"></i></div>
+                    <h4>Pica Fruty</h4>
+                    <span class="product-price">$26.000</span>
+                    <p>Vasito con mango y manzana verde, limón, gomitas enchiladas, chamoy y tajín.</p>
+                    <a href="https://wa.me/tunumerodetelefono?text=Hola,%20quisiera%20pedir%20un%20Pica%20Fruty.%20" target="_blank" class="buy-btn">Agregar al Carrito</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 PicaRico. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="side-social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</body>
+</html>
