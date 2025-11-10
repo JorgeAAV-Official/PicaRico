@@ -14,54 +14,75 @@
 </head>
 <body>
   <header class="hero">
-    <div class="header-content">
-      <div class="logo-container">
-        <img src="assets/logo1.png" alt="PicaRico Logo" class="logo-img">
-        <h1 class="logo-text">PicaRico</h1>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a [routerLink]="['/principal']">Inicio</a></li>
-          <li><a [routerLink]="['/productos']">Productos</a></li>
-          <li><a [routerLink]="['/promociones']">Promociones</a></li>
-          <li><a [routerLink]="['/contacto']">Contacto</a></li>
-        </ul>
-      </nav>
+  <div class="header-content">
+    <div class="logo-container">
+      <img src="assets/logo1.png" alt="PicaRico Logo" class="logo-img">
+      <h1 class="logo-text">PicaRico</h1>
     </div>
-  </header>
 
-  <main class="content">
-    <section class="intro">
-      <h2 class="section-title">El equilibrio perfecto entre dulce y picante.</h2>
-      <p class="section-description">
-        Nuestras gomitas combinan lo mejor de lo <span class="spicy">picante</span>
-        y lo más delicioso de lo <span class="sweet">dulce</span>.
-        ¡Una explosión de sabor que no podrás olvidar!
-      </p>
-      <a [routerLink]="['/productos']" class="btn">¡Quiero probar!</a>
-    </section>
+    <nav>
+      <ul class="nav-links">
+        <li><a [routerLink]="['/principal']">Inicio</a></li>
+        <li><a [routerLink]="['/productos']">Productos</a></li>
+        <li><a [routerLink]="['/promociones']">Promociones</a></li>
+        <li><a [routerLink]="['/contacto']">Contacto</a></li>
+        <li><a [routerLink]="['/personalizar']">Personalizar mi pedido</a></li>
+      </ul>
+    </nav>
+
+    <!-- 🛒 Icono del carrito con contador -->
+    <div class="cart-container">
+      <a [routerLink]="['/carrito']" class="cart-link">
+        <i class="fa-solid fa-cart-shopping cart-icon"></i>
+        <span class="cart-count">{{ cartService.getTotalItems() }}</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+  <section class="intro">
+    <h2 class="section-title">El equilibrio perfecto entre dulce y picante.</h2>
+    <p class="section-description">
+      Nuestras gomitas combinan lo mejor de lo <span class="spicy">picante</span>
+      y lo más delicioso de lo <span class="sweet">dulce</span>.
+      ¡Una explosión de sabor que no podrás olvidar!
+    </p>
+    <a [routerLink]="['/productos']" class="btn">¡Quiero probar!</a>
+  </section>
 <section class="highlight services-grid">
-  <div class="card service-card card-intensidad">
+  <div class="card service-card card-intensidad" [routerLink]="['/productos']">
     <h3>Intensidad</h3>
     <p>Para los amantes del picante extremo.</p>
   </div>
-  <div class="card service-card card-dulzura">
+
+  <div class="card service-card card-dulzura" [routerLink]="['/productos']">
     <h3>Dulzura</h3>
     <p>Equilibrio perfecto para todos los gustos.</p>
   </div>
-  <div class="card service-card card-variedad">
+
+  <div class="card service-card card-variedad" [routerLink]="['/productos']">
     <h3>Variedad</h3>
     <p>Colores, sabores y experiencias únicas.</p>
   </div>
 </section>
-  </main>
-  <footer class="main-footer">
-    <p>© 2025 PicaRico. Todos los derechos reservados.</p>
-   <div class="side-social-icons">
-    <a href="https://www.instagram.com/picariconeiva?igsh=cWpsM3dxZHlsaW5l " class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@picariconeiva?_t=ZS-8wzgNkc97vF&_r=1&fbclid=PAb21jcAM0L15leHRuA2FlbQIxMQABpy2MRqeZc2fdqNGf_rpI-zs9jcWx1K89bcxFEzVA1IS4YhxkNZPcpgDFXoKd_aem_yEGm6SIRcdEc8A2xBFvOoQ " class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://wa.link/4wugcu" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+</main>
+
+<footer class="main-footer">
+  <p>© 2025 PicaRico. Todos los derechos reservados.</p>
+  <div class="side-social-icons">
+    <a href="https://www.instagram.com/picariconeiva?igsh=cWpsM3dxZHlsaW5l" class="social-icon" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@picariconeiva?_t=ZS-8wzgNkc97vF&_r=1" class="social-icon" target="_blank">
+      <i class="fab fa-tiktok"></i>
+    </a>
+    <a href="https://wa.link/4wugcu" class="social-icon" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
   </div>
-  </footer>
+</footer>
+
 </body>
 </html>
