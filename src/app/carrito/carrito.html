@@ -41,7 +41,7 @@
 
 <!-- Contenido principal -->
 <main class="cart-page">
-  <h2>Mi Carrito </h2>
+  <h2>Mi Carrito</h2>
 
   <div *ngIf="cart.length === 0">
     <p>El carrito está vacío.</p>
@@ -61,15 +61,24 @@
   <div *ngIf="cart.length > 0" class="cart-actions">
     <p>Total de productos: {{ cartService.getTotalItems() }}</p>
     <button (click)="clear()" class="clear-btn">Vaciar Carrito</button>
-    <button id="buyBtn" class="buy-btn">Comprar</button>
+    <button class="buy-btn" (click)="openSummary()">Comprar</button>
   </div>
 </main>
 
-<!-- Formulario emergente -->
-<div id="formOverlay" class="form-overlay">
+<!-- Modal con resumen de compra -->
+<div class="form-overlay" [class.active]="showSummary">
   <div class="purchase-form">
-    <h3>Finalizar Compra</h3>
-    <form>
+    <h3>Resumen de tu compra</h3>
+
+    <div *ngFor="let product of cart" style="margin-bottom: 10px;">
+      <p><strong>{{ product.name }}</strong> (x{{ product.quantity }})</p>
+      <p>Subtotal: ${{ product.price * product.quantity | number }}</p>
+    </div>
+
+    <hr style="margin: 12px 0; border-color: rgba(255,159,28,0.2);" />
+    <p><strong>Total:</strong> ${{ totalCompra | number }}</p>
+
+    <form (submit)="confirmPurchase()">
       <input type="text" placeholder="Nombre completo" required>
       <input type="email" placeholder="Correo electrónico" required>
       <input type="text" placeholder="Dirección de entrega" required>
@@ -80,31 +89,10 @@
         <option value="nequi">Nequi</option>
       </select>
       <button type="submit">Confirmar compra</button>
-      <button type="button" id="closeForm" class="close-btn">Cancelar</button>
+      <button type="button" class="close-btn" (click)="closeSummary()">Cancelar</button>
     </form>
   </div>
 </div>
-
-<script>
-  const buyBtn = document.getElementById('buyBtn');
-  const formOverlay = document.getElementById('formOverlay');
-  const closeForm = document.getElementById('closeForm');
-
-  buyBtn.addEventListener('click', () => {
-    formOverlay.classList.add('active');
-  });
-
-  closeForm.addEventListener('click', () => {
-    formOverlay.classList.remove('active');
-  });
-
-  // Cierra el formulario si se hace clic fuera del cuadro
-  window.addEventListener('click', (e) => {
-    if (e.target === formOverlay) {
-      formOverlay.classList.remove('active');
-    }
-  });
-</script>
 
 </body>
 </html>

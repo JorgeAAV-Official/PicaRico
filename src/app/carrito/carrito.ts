@@ -13,11 +13,11 @@ import { RouterModule } from '@angular/router';
 })
 export class Carrito {
   cart: Product[] = [];
+  showSummary = false;
+  totalCompra = 0;
 
   constructor(public cartService: CartService) {
     this.cart = this.cartService.getCart();
-
-    // Suscribirse a cambios en el carrito
     this.cartService.cart$.subscribe(updatedCart => {
       this.cart = updatedCart;
     });
@@ -29,5 +29,27 @@ export class Carrito {
 
   clear() {
     this.cartService.clearCart();
+  }
+
+  // Mostrar resumen de la compra
+  openSummary() {
+    if (this.cart.length === 0) return;
+    this.totalCompra = this.cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+    this.showSummary = true;
+  }
+
+  // Cerrar el resumen
+  closeSummary() {
+    this.showSummary = false;
+  }
+
+  // Confirmar compra
+  confirmPurchase() {
+    alert(`✅ Compra confirmada por un total de $${this.totalCompra.toLocaleString()}`);
+    this.cartService.clearCart();
+    this.closeSummary();
   }
 }
