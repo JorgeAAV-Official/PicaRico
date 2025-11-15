@@ -12,12 +12,12 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100vh;
-  background-color: #0d0d0d;
+  min-height: 80vh;
+  background-color: #b8acac;
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
-  background: url('/assets/goma.jpg') no-repeat center center fixed;
+  background: url('/assets/fondo5.jpg') no-repeat center center fixed;
   background-size: cover; 
 }
 
@@ -43,7 +43,7 @@ body::before {
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid #ff4d4d;
+  border-bottom: 2px solid #ffffff;
   backdrop-filter: blur(5px);
 }
 
@@ -127,10 +127,11 @@ body::before {
 .section-title {
   font-family: 'Anton', sans-serif;
   font-size: 2.5rem;
-  color: #ff4d4d;
+  color: #ffffff;
   margin-bottom: 1rem;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #ff4d4d;
+      text-shadow: 0 0 8px #ff4d4d, 0 0 20px #ff4d4d; 
+
 }
 
 .section-description {
@@ -147,14 +148,14 @@ body::before {
 }
 
 .sweet {
-  color: #ff9f1c;
+  color: #f1443b;
   font-weight: bold;
 }
 
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: linear-gradient(90deg, #e63946, #ff9f1c);
+  background: linear-gradient(90deg, #e63946, #ff1c1c);
   color: white;
   font-weight: bold;
   border-radius: 30px;
@@ -187,7 +188,7 @@ body::before {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Cards (Estilos corregidos y mejorados) */
+/* === CONTENEDOR DE CARDS === */
 .highlight {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -195,95 +196,97 @@ body::before {
   margin-top: 2rem;
 }
 
+/* === CARD BASE === */
 .card {
-  background: #2c2c2c;
+  background: rgba(0, 0, 0, 0.55);      /* semitransparente */
+  backdrop-filter: blur(50px);           /* 👉 Desenfoque */
   padding: 1.5rem;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
   position: relative;
   overflow: hidden;
-  border: 2px solid transparent; /* Borde base transparente para el efecto */
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.3s ease;
 }
 
-/* Efecto hover general para todas las tarjetas */
+/* Hover general */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  transform: translateY(-7px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
 }
 
+/* Título de card */
 .card h3 {
-  font-family: 'Poppins', sans-serif;
-  color: #ff4d4d; 
-  margin-bottom: 0.8rem;
   font-weight: 700;
+  margin-bottom: 0.8rem;
+  font-family: 'Poppins', sans-serif;
   position: relative;
   z-index: 1;
-  text-shadow: 0 0 5px #ff4d4d;
 }
 
+/* Texto */
 .card p {
   position: relative;
   z-index: 1;
 }
 
-/* Estilos específicos para cada tarjeta */
+/* ------------------------------------------------------
+      TARJETAS ESPECÍFICAS (INTENSIDAD, DULZURA, VARIEDAD)
+------------------------------------------------------- */
 
-/* Tarjeta de Intensidad 🔥 */
+/* 🔥 INTENSIDAD */
 .card-intensidad {
-  border-image: linear-gradient(45deg, #e63946, #ff9f1c) 1;
-  border-image-slice: 1;
+  border-image: linear-gradient(45deg, #e7c4c7, #eae1d5) 1;
 }
 .card-intensidad h3 {
-  color: #ff4d4d;
-  text-shadow: 0 0 8px rgba(255, 77, 77, 0.7);
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
 }
 .card-intensidad:hover {
-  border-color: #ff4d4d;
-  box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+  border-color: #ffffff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.45);
 }
 
-
-/* Tarjeta de Dulzura 🍬 */
+/* 🍬 DULZURA */
 .card-dulzura {
-  border-image: linear-gradient(45deg, #ff9f1c, #e63946) 1;
-  border-image-slice: 1;
+  border-image: linear-gradient(45deg, #ffffff, #eae1d5) 1;
 }
 .card-dulzura h3 {
-  color: #ff9f1c;
-  text-shadow: 0 0 8px rgba(255, 159, 28, 0.7);
+  color: #ffffff;
 }
 .card-dulzura:hover {
-  border-color: #ff9f1c;
-  box-shadow: 0 0 20px rgba(255, 159, 28, 0.5);
+  border-color: #ffffff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
 }
 
-/* Tarjeta de Variedad ✨ */
+/* ✨ VARIEDAD */
 .card-variedad {
-  border-image: linear-gradient(45deg, #e63946, #ff9f1c, #9d4edd) 1;
-  border-image-slice: 1;
+  border-image: linear-gradient(45deg, #eae1d5, #eae1d5) 1;
 }
 .card-variedad h3 {
-  background: -webkit-linear-gradient(45deg, #ff4d4d, #ff9f1c);
+  background: linear-gradient(45deg, #ffffff, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none;
 }
 .card-variedad:hover {
-  border-color: #9d4edd;
-  box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+  border-color: #ff0c0c;
+  box-shadow: 0 0 25px rgba(255, 159, 28, 0.45);
 }
 
 /* Footer */
 .main-footer {
-  background: #000;
+  background: #ffffff1c;
   color: #f8f8f8;
   text-align: center;
   padding: 1.5rem;
   margin-top: 2rem;
   font-size: 0.9rem;
   width: 100%;
-  border-top: 1px solid #222;
+  border-top: 1px solid #ffffff00;
 }
 
 /* Redes sociales en el lateral izquierdo */

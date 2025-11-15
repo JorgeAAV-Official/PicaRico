@@ -16,7 +16,7 @@ html, body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
-    background: url('/assets/goma.jpg') no-repeat center center fixed;
+    background: url('/assets/fondo5.jpg') no-repeat center center fixed;
     background-size: cover; 
 }
 
@@ -145,9 +145,9 @@ body::before {
 .category-title {
     font-family: 'Anton', sans-serif;
     font-size: 2.2rem;
-    color: #681cff;
+    color: #ffffff;
     letter-spacing: 3px;
-    text-shadow: 0 0 8px #1cff86;
+    text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d; 
     margin-bottom: 2rem;
 }
 .product-grid {

@@ -259,14 +259,14 @@ body::before {
 
 /* Footer */
 .main-footer {
-  background: #000;
-  color: #f8f8f8;
+  background: #ffffff00;
+  color: #ffffff00;
   text-align: center;
   padding: 1.5rem;
   margin-top: 2rem;
   font-size: 0.9rem;
   width: 100%;
-  border-top: 1px solid #222;
+  border-top: 1px solid #ffffff;
 }
 
 /* Iconos sociales laterales */
