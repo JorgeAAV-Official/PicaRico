@@ -87,16 +87,16 @@ main { flex: 1; }
   margin: 3rem auto;
   padding: 2rem 1rem;
   text-align: center;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(254, 6, 6, 0);
   border-radius: 12px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(97, 14, 14, 0);
 }
 
 .cart-page h2 {
   font-family: 'Anton', sans-serif;
   font-size: 2.3rem;
-  color: #ff4d4d;
+  color: #ffffff;
   text-shadow: 0 0 10px #ff4d4d;
   margin-bottom: 1.5rem;
 }
@@ -201,7 +201,7 @@ main { flex: 1; }
   margin-top: auto;
   font-size: 0.9rem;
   width: 100%;
-  border-top: 1px solid rgba(34, 34, 34, 0)fff;
+  border-top: 1px solid rgb(255, 0, 0)fff;
 }
 
 /* === ICONOS LATERALES === */
