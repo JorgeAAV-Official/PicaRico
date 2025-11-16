@@ -26,8 +26,6 @@
     <li><a [routerLink]="['/contacto']">Contacto</a></li>
     <li><a [routerLink]="['/promociones']">Promociones</a></li>
 
-
-
     <li class="dropdown">
       <a [routerLink]="['/productos']" class="active">Productos ▾</a>
       <ul class="dropdown-menu">
@@ -39,7 +37,6 @@
   </ul>
 </nav>
 
-
     <div class="cart-container">
       <a [routerLink]="['/carrito']" class="cart-link">
         <i class="fa-solid fa-cart-shopping cart-icon"></i>
@@ -48,7 +45,12 @@
     </div>
   </div>
 </header>
+
+<!-- TOAST éxito -->
 <div class="toast" *ngIf="showToast">Producto agregado al carrito 🛒</div>
+
+<!-- TOAST error si no está logueado -->
+<div class="toast toast-error" *ngIf="showLoginError">Debes iniciar sesión para agregar productos al carrito 🔒</div>
 
 <main class="content">
   <section class="section-hero">
@@ -82,11 +84,12 @@
         <span class="product-price"> Mediana $5.500 </span>
         <p>Gomitas bañadas con una capa extra de chamoy y un toque de tajín. Más jugosas, más intensas.</p>
         <button class="buy-btn"
-          (click)="addToCart('Mojadas', 4500, 'Gomitas bañadas con una capa extra de chamoy y tajín', 'assets/goma.jpg')">
+          (click)="addToCart('Mojadas', 5500, 'Gomitas bañadas con una capa extra de chamoy y tajín', 'assets/goma.jpg')">
           Agregar al Carrito
         </button>
       </div>
-<div class="product-card">
+
+      <div class="product-card">
         <h4>Equilibradas</h4>
         <div class="card-icon">
           <img src="assets/goma.jpg" alt="Mojadas" class="product-img">
@@ -94,13 +97,12 @@
         <span class="product-price">Grande $12.000</span>
         <p>Gomitas bañadas con una capa extra de chamoy y un toque de tajín. Más jugosas, más intensas.</p>
         <button class="buy-btn"
-          (click)="addToCart('Mojadas', 4500, 'Gomitas bañadas con una capa extra de chamoy y tajín', 'assets/goma.jpg')">
+          (click)="addToCart('Equilibradas Grande', 12000, 'Gomitas grandes con extra chamoy', 'assets/goma.jpg')">
           Agregar al Carrito
         </button>
-        
       </div>
       
-<div class="product-card">
+      <div class="product-card">
         <h4>Mojadas</h4>
         <div class="card-icon">
           <img src="assets/mojadas1.jpg" alt="Mojadas" class="product-img">
@@ -108,14 +110,12 @@
         <span class="product-price">Pequeña $4.500</span>
         <p>Gomitas bañadas con una capa extra de chamoy y un toque de tajín. Más jugosas, más intensas.</p>
         <button class="buy-btn"
-          (click)="addToCart('Mojadas', 4500, 'Gomitas bañadas con una capa extra de chamoy y tajín', 'assets/goma.jpg')">
+          (click)="addToCart('Mojadas Pequeña', 4500, 'Mojadas pequeñas', 'assets/mojadas1.jpg')">
           Agregar al Carrito
         </button>
       </div>
 
-      
-<div class="product-card">
-    
+      <div class="product-card">
         <h4>Mojadas</h4>
         <div class="card-icon">
           <img src="assets/mojadas1.jpg" alt="Mojadas" class="product-img">
@@ -123,7 +123,7 @@
         <span class="product-price">Mediana $6.500</span>
         <p>Gomitas bañadas con una capa extra de chamoy y un toque de tajín. Más jugosas, más intensas.</p>
         <button class="buy-btn"
-          (click)="addToCart('Mojadas', 4500, 'Gomitas bañadas con una capa extra de chamoy y tajín', 'assets/goma.jpg')">
+          (click)="addToCart('Mojadas Mediana', 6500, 'Mojadas mediana', 'assets/mojadas1.jpg')">
           Agregar al Carrito
         </button>
       </div>
@@ -136,16 +136,13 @@
         <span class="product-price">Grande $14.000</span>
         <p>Gomitas cubiertas con abundante tajín y chamoy, con un acabado seco y muy sabrosito.</p>
         <button class="buy-btn"
-          (click)="addToCart('Empolvadas', 6000, 'Gomitas cubiertas con tajín y chamoy', 'assets/goma.jpg')">
+          (click)="addToCart('Empolvadas Grande', 14000, 'Empolvadas grandes', 'assets/mojadas1.jpg')">
           Agregar al Carrito
         </button>
       </div>
-  
-
-      
     </div>
-    
   </section>
+
   <section class="category-section">
     <h3 class="category-title"> CHAMOY</h3>
     <div class="product-grid">
@@ -157,7 +154,7 @@
         <span class="product-price">CHAMOY 200ML $17.000 </span>
         <p>chamoy que PicaRico</p>
         <button class="buy-btn"
-          (click)="addToCart('Equilibradas', 3500, 'Gomitas bañadas en chamoy y tajín', 'assets/goma.jpg')">
+          (click)="addToCart('CHAMOY PEQUEÑO', 17000, 'Chamoy 200ml', 'assets/chamoy1.png')">
           Agregar al Carrito
         </button>
       </div>
@@ -167,79 +164,17 @@
         <div class="card-icon1">
           <img src="assets/chamoy2.png" alt="Mojadas" class="product-img">
         </div>
-        <span class="product-price"> Mediana $5.500 </span>
-        <p>Gomitas bañadas con una capa extra de chamoy y un toque de tajín. Más jugosas, más intensas.</p>
+        <span class="product-price">CHAMOY 500ML $25.000</span>
+        <p>Chamoy con más intensidad.</p>
         <button class="buy-btn"
-          (click)="addToCart('Mojadas', 4500, 'Gomitas bañadas con una capa extra de chamoy y tajín', 'assets/goma.jpg')">
-          Agregar al Carrito
-        </button>
-      </div>
-<div class="product-card">
-        <h4>Equilibradas</h4>
-        <div class="card-icon">
-          <img src="assets/goma.jpg" alt="Mojadas" class="product-img">
-        </div>
-        <span class="product-price">Grande $12.000</span>
-        <p>Gomitas bañadas con una capa extra de chamoy y un toque de tajín. Más jugosas, más intensas.</p>
-        <button class="buy-btn"
-          (click)="addToCart('Mojadas', 4500, 'Gomitas bañadas con una capa extra de chamoy y tajín', 'assets/goma.jpg')">
-          Agregar al Carrito
-        </button>
-        
-      </div>
-      
-<div class="product-card">
-        <h4>Mojadas</h4>
-        <div class="card-icon">
-          <img src="assets/mojadas1.jpg" alt="Mojadas" class="product-img">
-        </div>
-        <span class="product-price">Pequeña $4.500</span>
-        <p>Gomitas bañadas con una capa extra de chamoy y un toque de tajín. Más jugosas, más intensas.</p>
-        <button class="buy-btn"
-          (click)="addToCart('Mojadas', 4500, 'Gomitas bañadas con una capa extra de chamoy y tajín', 'assets/goma.jpg')">
+          (click)="addToCart('CHAMOY MEDIANO', 25000, 'Chamoy 500ml', 'assets/chamoy2.png')">
           Agregar al Carrito
         </button>
       </div>
 
-      
-<div class="product-card">
-    
-        <h4>Mojadas</h4>
-        <div class="card-icon">
-          <img src="assets/mojadas1.jpg" alt="Mojadas" class="product-img">
-        </div>
-        <span class="product-price">Mediana $6.500</span>
-        <p>Gomitas bañadas con una capa extra de chamoy y un toque de tajín. Más jugosas, más intensas.</p>
-        <button class="buy-btn"
-          (click)="addToCart('Mojadas', 4500, 'Gomitas bañadas con una capa extra de chamoy y tajín', 'assets/goma.jpg')">
-          Agregar al Carrito
-        </button>
-      </div>
-
-      <div class="product-card">
-        <h4>Empolvadas</h4>
-        <div class="card-icon">
-          <img src="assets/mojadas1.jpg" alt="Mojadas" class="product-img">
-        </div>
-        <span class="product-price">Grande $14.000</span>
-        <p>Gomitas cubiertas con abundante tajín y chamoy, con un acabado seco y muy sabrosito.</p>
-        <button class="buy-btn"
-          (click)="addToCart('Empolvadas', 6000, 'Gomitas cubiertas con tajín y chamoy', 'assets/goma.jpg')">
-          Agregar al Carrito
-        </button>
-      </div>
-  
-
-      
+      <!-- puedes seguir agregando items -->
     </div>
-    
   </section>
-  
-
-  
-
-  <!-- Puedes agregar aquí las demás categorías siguiendo el mismo patrón -->
-
 </main>
 
     <footer class="main-footer">
@@ -251,5 +186,6 @@
         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
     </div>
+    
 </body>
 </html>

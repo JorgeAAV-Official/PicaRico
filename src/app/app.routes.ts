@@ -8,7 +8,7 @@ import { Intenso } from './intenso/intenso';
 import { Bandejas } from './bandejas/bandejas';
 import { Dulce } from './dulce/dulce';
 import { Promociones } from './promociones/promociones';
-
+import { Registro } from './registro/registro';
 export const routes: Routes = [
   { path: '', component: Principal },
   { path: 'contacto', component: Contacto },
@@ -19,7 +19,8 @@ export const routes: Routes = [
   { path: 'bandeja', component: Bandejas},
   {path: 'dulce', component: Dulce},
   {path: 'principal', component: Principal},
-  {path: 'promociones', component: Promociones}
+  {path: 'promociones', component: Promociones},
+  {path: 'registro', component: Registro}
 
 
 ];

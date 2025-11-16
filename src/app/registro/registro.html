@@ -1,1 +1,84 @@
-<p>registro works!</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+    <div class="registro-container">
+
+  <div class="registro-box">
+
+    <h2 class="registro-title">Crea tu cuenta</h2>
+
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+        >
+      </div>
+
+      <div class="form-group checkbox-group">
+        <input
+          type="checkbox"
+          id="autorizacion"
+          [(ngModel)]="autorizacion"
+          name="autorizacion"
+          required
+        >
+        <label for="autorizacion">Acepto el tratamiento de mis datos personales</label>
+      </div>
+
+      <p *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </p>
+
+      <button
+        type="submit"
+        class="btn-registrar"
+        [disabled]="!autorizacion"
+      >
+        Registrarse
+      </button>
+    </form>
+
+    <p class="texto-login">
+      ¿Ya tienes cuenta?
+      <a [routerLink]="['/principal']">Inicia sesión</a>
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- MODAL DE ÉXITO -->
+<div class="modal-overlay" *ngIf="showSuccessModal">
+  <div class="modal-box">
+    <h3>Registro exitoso</h3>
+    <p>Tu cuenta ha sido creada correctamente.</p>
+    <button class="modal-btn" (click)="closeSuccessModal()">Aceptar</button>
+  </div>
+</div>
+
+    
+</body>
+</html>

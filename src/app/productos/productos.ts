@@ -12,23 +12,31 @@ import { CartService, Product } from '../services/cart.service';
 })
 export class Productos {
   showToast = false;
+  showLoginError = false;
 
   // 🔽 Variable para guardar la categoría seleccionada
   categoriaSeleccionada: string = 'todas';
 
   constructor(public cartService: CartService) {}
 
-  // 🔥 Método para agregar producto al carrito (sin tocar)
-  addToCart(name: string, price: number, description: string, image: string) {
-    const product: Product = { name, price, description, image, quantity: 1 };
-    this.cartService.addToCart(product);
+  // Método para agregar producto al carrito con validación de sesión
+  async addToCart(name: string, price: number, description: string, image: string) {
+    // Si no está logueado, mostrar toast rojo y no hacer nada en la BD
+    if (!this.cartService.isUserLogged()) {
+      this.showLoginError = true;
+      setTimeout(() => this.showLoginError = false, 2000);
+      return;
+    }
 
-    // Animación carrito
+    const product: Product = { name, price, description, image, quantity: 1 };
+    await this.cartService.addToCart(product);
+
+    // Animación carrito (usa la clase .cart-icon que ya tienes)
     const cartIcon = document.querySelector('.cart-icon') as HTMLElement;
     cartIcon?.classList.add('bounce');
     setTimeout(() => cartIcon?.classList.remove('bounce'), 500);
 
-    // Mostrar toast
+    // Mostrar toast de éxito
     this.showToast = true;
     setTimeout(() => this.showToast = false, 1500);
   }
@@ -37,8 +45,5 @@ export class Productos {
   filterCategory(category: string) {
     this.categoriaSeleccionada = category;
     console.log(`Categoría seleccionada: ${category}`);
-
-    // Aquí podrías más adelante aplicar un filtro visual o cargar productos específicos
-    // Por ahora solo muestra el cambio por consola
   }
 }

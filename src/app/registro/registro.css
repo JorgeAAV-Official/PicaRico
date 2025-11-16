@@ -1,0 +1,203 @@
+/* Fondo y tipografía general */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  background: url('/assets/fondo5.jpg') no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+/* Contenedor del formulario */
+.registro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.registro-box {
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #ff9f1c;
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  width: 90%;
+  max-width: 550px; /* más grande */
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 159, 28, 0.5);
+}
+
+.registro-title {
+  font-size: 2.2rem; /* título más grande */
+  margin-bottom: 1.2rem;
+  color: #ff9f1c;
+  text-shadow: 0 0 8px #ff4d4d;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 1.4rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  font-size: 1rem; /* etiqueta más grande */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.85rem; /* inputs agrandados */
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+}
+
+/* Checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  transform: scale(1.2); /* checkbox más grande */
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  cursor: pointer;
+}
+
+/* Botón */
+.btn-registrar {
+  width: 100%;
+  background: linear-gradient(90deg, #e63946, #ff1c1c);
+  border: none;
+  padding: 1rem;
+  border-radius: 30px;
+  margin-top: 1.2rem;
+  font-size: 1.1rem; /* botón más grande */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-registrar:hover:enabled {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #ff9f1c;
+}
+
+.btn-registrar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.texto-login {
+  margin-top: 1.2rem;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.texto-login a {
+  color: #ff9f1c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.texto-login a:hover {
+  text-decoration: underline;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #111;
+  border: 1px solid #ff9f1c;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 0 12px rgba(255, 159, 28, 0.4);
+  animation: popIn 0.25s ease-out;
+}
+
+.modal-box h3 {
+  color: #ff9f1c;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 6px #ff4d4d;
+}
+
+.modal-box p {
+  color: #ddd;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.modal-btn {
+  background: linear-gradient(90deg, #e63946, #ff1c1c);
+  border: none;
+  padding: 0.9rem 1.4rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.2s ease;
+}
+
+.modal-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ff9f1c;
+}
+
+/* Animación */
+@keyframes popIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.error-message {
+  color: white !important;
+  font-weight: 500;
+}
+
