@@ -79,7 +79,7 @@ body::before {
 
 .nav-links a {
     text-decoration: none;
-    color: #f0f0f0;
+    color: #fbff00;
     font-weight: 600;
     font-size: 1rem;
     transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
@@ -88,13 +88,18 @@ body::before {
     letter-spacing: 1px;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ff9f1c;
-    transform: translateY(-3px);
-    text-shadow: 0 0 5px #ff9f1c, 0 0 10px #ff9f1c;
-    border-bottom: 2px solid #ff9f1c;
+.nav-links a:hover {
+  color: #ff9f1c;
+  border-bottom: 2px solid #ff9f1c;
 }
+
+.nav-links a.active {
+    color: #ffe600;
+    transform: translateY(-3px);
+    text-shadow: 0 0 5px #f2ff00, 0 0 10px #f4ff1c;
+    border-bottom: 2px solid #fbff02;
+}
+
 
 /* Contenido Principal y Títulos al estilo 14:14 */
 .content {
@@ -123,12 +128,12 @@ body::before {
 
 .section-description {
     font-size: 1rem;
-     background: rgba(44, 44, 44, 0.7);
+     background: rgba(44, 44, 44, 0);
     color: #fff;
     line-height: 1.8;
     max-width: 800px;
     margin: 0 auto;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
 }
 
 .category-section {
@@ -145,12 +150,13 @@ body::before {
 }
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
+
 .product-card {
     background: rgba(44, 44, 44, 0.7);
-    padding: 2rem 1.5rem;
+      padding: 1.2rem 1rem;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -248,7 +254,7 @@ body::before {
 
 .product-price {
     font-weight: bold;
-    color: #ff9f1c;
+    color: #ffffff;
     margin-bottom: 0.5rem;
     display: block;
 }
@@ -261,7 +267,7 @@ body::before {
     display: inline-block;
     padding: 0.6rem 1.2rem;
     margin-top: 1.5rem;
-    background: linear-gradient(90deg, #ff9f1c, #ff4d4d);
+    background: linear-gradient(90deg, #ff0808, #ff0000);
     color: #fff;
     font-weight: bold;
     border-radius: 20px;
@@ -298,7 +304,7 @@ body::before {
 
 .mini-cart h3 {
     margin-bottom: 1rem;
-    color: #ff9f1c;
+    color: #ff1c1c;
     text-align: center;
 }
 
@@ -355,9 +361,9 @@ body::before {
 }
 
 .side-social-icons .social-icon:hover {
-    color: #ff9f1c;
+    color: #ff0000;
     transform: translateY(-3px) scale(1.1);
-    text-shadow: 0 0 10px #ff9f1c;
+    text-shadow: 0 0 10px #ff1c1c;
 }
 
 /* 🔽 Estilos del menú desplegable */
@@ -381,10 +387,9 @@ body::before {
 }
 
 .nav-links a:hover {
-  color: #ffca28;
+  color: #ff2828;
 }
 
-/* 🔽 Submenú completamente oculto por defecto */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -419,7 +424,7 @@ body::before {
 }
 
 .dropdown-menu a:hover {
-  background-color: #ffca28;
+  background-color: #ff0202;
   color: #1a1a1a;
   border-radius: 4px;
 }

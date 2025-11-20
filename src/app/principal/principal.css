@@ -1,4 +1,6 @@
-/* Reset global */
+/* ============================
+   🔥 RESET GLOBAL
+============================ */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +9,6 @@
   color: #f0f0f0;
 }
 
-/* Estructura global */
 html, body {
   width: 100%;
   min-height: 100vh;
@@ -22,7 +23,7 @@ body {
   position: relative;
 }
 
-/* Capa de oscurecimiento + blur */
+/* Fondo oscuro + blur */
 body::before {
   content: '';
   position: fixed;
@@ -35,7 +36,9 @@ body::before {
   z-index: -1;
 }
 
-/* Header */
+/* ============================
+   🔥 HEADER
+============================ */
 .hero {
   background: rgba(0, 0, 0, 0.8);
   padding: 1.5rem 2rem;
@@ -52,6 +55,7 @@ body::before {
   align-items: center;
 }
 
+/* Logo */
 .logo-container {
   display: flex;
   align-items: center;
@@ -73,7 +77,9 @@ body::before {
   text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d;
 }
 
-/* Nav */
+/* ============================
+   🔥 NAV
+============================ */
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -92,7 +98,9 @@ body::before {
   border-bottom: 2px solid #ff9f1c;
 }
 
-/* Iconos */
+/* ============================
+   🔥 ICONOS DERECHA
+============================ */
 .icon-container {
   display: flex;
   align-items: center;
@@ -102,22 +110,19 @@ body::before {
 .profile-icon {
   font-size: 1.8rem;
   cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .profile-icon:hover {
   transform: scale(1.1);
 }
 
-.logged-out-icon {
-  color: #ff3b3b !important;
-}
+.logged-out-icon { color: #ff3b3b !important; }
+.logged-in-icon  { color: #00ff00 !important; }
 
-.logged-in-icon {
-  color: #00ff00 !important;
-}
-
-/* Modal */
+/* ============================
+   🔥 MODALES (LOGIN + PERFIL)
+============================ */
 .modal {
   position: fixed;
   top: 0;
@@ -154,7 +159,6 @@ body::before {
   padding: 0.7rem;
   margin: 0.6rem 0;
   background: #222;
-  color: white;
   border: none;
   border-radius: 5px;
 }
@@ -167,31 +171,14 @@ body::before {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 0.5rem;
-}
-
-.register-text {
-  margin-top: 0.8rem;
-  font-size: 0.9rem;
 }
 
 .register-text a {
   color: #ff9f1c;
-  text-decoration: none;
 }
 
-.register-text a:hover {
-  text-decoration: underline;
-}
-
-/* Modal logueado */
 .logged-in-box {
   border: 1px solid #ff0000;
-}
-
-.user-email {
-  margin: 1rem 0;
-  font-size: 1rem;
 }
 
 .btn-logout {
@@ -202,22 +189,17 @@ body::before {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 1rem;
 }
 
-/* Errores */
 .login-error {
   color: white;
   background: rgba(255, 0, 0, 0.25);
-  padding: 8px 12px;
+  padding: 8px;
   border-radius: 6px;
   margin-top: 10px;
-  text-align: center;
-  font-size: 14px;
   backdrop-filter: blur(4px);
 }
 
-/* Main */
 .content {
   flex: 1;
   padding: 4rem 1rem;
@@ -228,21 +210,20 @@ body::before {
   background: rgba(68, 68, 68, 0.6);
   padding: 2.5rem;
   border-radius: 12px;
-
-  /* 🔥 Ajuste para que NO ocupe todo el ancho */
-  max-width: 900px;    /* cámbialo a 700px o 800px si lo quieres más pequeño */
-  margin: 120px auto 0;  /* lo centra y lo baja */
-
+  max-width: 900px;
+  margin: 120px auto 0;
 }
 
 .section-title {
-  font-size: 2.8rem;
-  text-shadow: 0 0 8px #ff4d4d;
+  font-family: 'Anton', sans-serif;
+  font-size: 2.2rem;
+  text-shadow: 0 0 10px #ff4d4d;
+  margin-bottom: 2rem;
 }
 
 .section-description {
-  margin: 1rem 0;
   font-size: 1.1rem;
+  margin: 1rem 0;
 }
 
 .btn {
@@ -252,18 +233,18 @@ body::before {
   text-decoration: none;
 }
 
+
 .main-footer {
-    background: (55,255,255,0.15);
-    color: #f8f8f800;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    width: 100%;
-    border-top: 1px solid #ffffff00;
+  background: rgba(55, 255, 255, 0);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  width: 100%;
 }
 
-/* Íconos laterales */
+/* ============================
+   🔥 ICONOS LATERALES
+============================ */
 .side-social-icons {
   position: fixed;
   left: 1rem;

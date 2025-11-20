@@ -1,4 +1,3 @@
-/* Reset global */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +6,6 @@
   color: #f0f0f0;
 }
 
-/* Estructura global */
 html, body {
   width: 100%;
   min-height: 100vh;
@@ -22,7 +20,7 @@ body {
   position: relative;
 }
 
-/* Capa de oscurecimiento + blur */
+
 body::before {
   content: '';
   position: fixed;
@@ -30,13 +28,12 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(10px); /* desenfoque moderado */
-  background: rgba(0, 0, 0, 0.2); /* oscurecimiento suave */
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2); 
   z-index: -1;
 }
 
 
-/* Header */
 .hero {
   background: rgba(0, 0, 0, 0.8);
   padding: 1.5rem 2rem;

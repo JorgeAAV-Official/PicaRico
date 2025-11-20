@@ -1,4 +1,6 @@
-/* Reset global */
+/* ============================
+   🔥 RESET GLOBAL
+============================ */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +9,6 @@
   color: #f0f0f0;
 }
 
-/* Estructura global */
 html, body {
   width: 100%;
   min-height: 100vh;
@@ -22,7 +23,7 @@ body {
   position: relative;
 }
 
-/* Capa de oscurecimiento + blur */
+/* Fondo oscuro + blur */
 body::before {
   content: '';
   position: fixed;
@@ -35,7 +36,9 @@ body::before {
   z-index: -1;
 }
 
-/* Header */
+/* ============================
+   🔥 HEADER
+============================ */
 .hero {
   background: rgba(0, 0, 0, 0.8);
   padding: 1.5rem 2rem;
@@ -45,12 +48,14 @@ body::before {
   top: 0;
   z-index: 1000;
 }
+
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Logo */
 .logo-container {
   display: flex;
   align-items: center;
@@ -72,203 +77,169 @@ body::before {
   text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d;
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
 .nav-links a {
   text-decoration: none;
-  color: #f0f0f0;
   font-weight: 600;
   border-bottom: 2px solid transparent;
 }
-
 .nav-links a:hover {
-  color: #ff9f1c;
-  border-bottom: 2px solid #ff9f1c;
+  color: #ff0000;
+  border-bottom-color: #fa0d05;
 }
 
 /* Main content */
 .content {
   padding: 3rem 1rem;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
   text-align: center;
-  position: relative;
-  z-index: 2;
 }
 
-/* Intro box (esa gran tarjeta translúcida) */
+/* Caja intro */
 .intro {
   margin-top: 2rem;
   padding: 2.5rem;
   border-radius: 14px;
-  position: relative;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   backdrop-filter: blur(5px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.45);
-  /* Asegura que los elementos del formulario estén visibles sobre el pseudo-elemento */
-  z-index: 2;
 }
 
 .section-title {
   font-family: 'Anton', sans-serif;
-  font-size: 2.5rem;
-  color: #ff4d4d;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #ff4d4d;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px #ff4d4d;
+  margin-bottom: 2rem;
 }
 
 .section-description {
   max-width: 700px;
-  margin: 0 auto 2rem auto;
+  margin: auto auto 2rem;
   font-size: 1rem;
   color: #ccc;
   line-height: 1.8;
 }
 
-/* Botón reutilizable */
+/* Botón */
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: linear-gradient(90deg, #e63946, #ff9f1c);
-  color: white;
+  background: linear-gradient(90deg, #e63946, #ff0000);
+  color: #fff;
   font-weight: bold;
   border-radius: 30px;
-  text-decoration: none;
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  z-index: 1;
+  transition: transform .2s, box-shadow .3s;
 }
 
 .btn::before {
   content: '';
   position: absolute;
-  top: 0;
+  inset: 0;
   left: -100%;
-  width: 100%;
-  height: 100%;
   background: rgba(255,255,255,0.2);
-  transition: 0.5s;
   transform: skewX(-20deg);
-  z-index: -1;
+  transition: .5s;
 }
-
 .btn:hover::before { left: 100%; }
 .btn:hover { transform: scale(1.03); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
 
-/* Cards */
-.highlight { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-.card { background: #2c2c2c; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); position: relative; overflow: hidden; border: 2px solid transparent; transition: transform .2s; }
-.card h3 { font-family: 'Poppins', sans-serif; color: #ff4d4d; margin-bottom: .8rem; font-weight:700; text-shadow: 0 0 5px #ff4d4d; }
-
-/* Tarjetas específicas (mantengo tus gradientes) */
-.card-intensidad { border-image: linear-gradient(45deg, #e63946, #ff9f1c) 1; border-image-slice: 1; }
-.card-dulzura   { border-image: linear-gradient(45deg, #ff9f1c, #e63946) 1; border-image-slice: 1; }
-.card-variedad  { border-image: linear-gradient(45deg, #e63946, #ff9f1c, #9d4edd) 1; border-image-slice: 1; }
-
-/* ====== CONTACTO (CORRECCIONES IMPORTANTES) ====== */
-
-/* Contenedor principal del contacto: dos columnas (formulario + info) */
-.contact-grid {
+/* CARDS */
+.highlight {
   display: grid;
-  grid-template-columns: 1.5fr 1fr; /* formulario visible, info más pequeña */
-  gap: 2rem;
-  margin-top: 1.8rem;
-  align-items: start;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card {
+  background: #2c2c2c;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform .2s;
+}
+.card h3 {
+  color: #ff4d4d;
+  margin-bottom: .8rem;
+  font-weight: 700;
+  text-shadow: 0 0 5px #ff4d4d;
 }
 
-/* Caja del formulario e info: translúcido y con blur */
+/* Bordes gradientes */
+.card-intensidad,
+.card-dulzura,
+.card-variedad {
+  border: 2px solid transparent;
+  border-image-slice: 1;
+}
+
+.card-intensidad { border-image: linear-gradient(45deg,#e63946,#fc3d04) 1; }
+.card-dulzura   { border-image: linear-gradient(45deg,#f63403,#e63946) 1; }
+.card-variedad  { border-image: linear-gradient(45deg,#e63946,#ff0000,#9d4edd) 1; }
+
+/* CONTACTO */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  margin-top: 1.8rem;
+}
+
 .contact-form,
 .contact-info {
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.456);
   padding: 2rem;
   border-radius: 12px;
-  backdrop-filter: blur(6px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.5);
 }
 
-/* --- REGLAS FUERTES QUE ARREGLAN EL "FORMULARIO DAÑADO" --- */
-/* Aseguramos que etiquetas sean bloque y campos ocupen 100% */
+/* Inputs */
 .intro .contact-form label {
-  display: block !important;
-  margin: 0 0 0.5rem 0;
+  display: block;
+  margin-bottom: .5rem;
   font-weight: 600;
-  color: #ff9f1c;
-  font-size: 0.95rem;
 }
 
 .intro .contact-form input,
 .intro .contact-form textarea,
 .intro .contact-form select {
-  display: block !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  padding: 0.9rem !important;
-  border-radius: 8px !important;
-  border: none !important;
-  background: #111 !important;
-  color: #eee !important;
-  font-size: 1rem !important;
-  margin-bottom: 1rem !important;
+  width: 100%;
+  padding: .9rem;
+  border-radius: 8px;
+  border: none;
+  background: #1111112b;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
-/* Placeholder legible */
-.intro .contact-form ::placeholder {
-  color: #bfbfbf !important;
-  opacity: 1 !important;
-}
+.intro .contact-form textarea { min-height: 140px; resize: vertical; }
+.intro .contact-form ::placeholder { color: #bbb; }
 
-/* Textarea con altura fija y no flotante */
-.intro .contact-form textarea {
-  min-height: 140px !important;
-  resize: vertical !important;
-}
-
-/* Botón Enviar dentro del formulario: debajo del textarea */
 .intro .contact-form .btn {
-  margin-top: 0.5rem;
-  padding: 0.7rem 1.4rem;
-  border-radius: 28px;
-  display: inline-block;
-  align-self: flex-start;
+  margin-top: .5rem;
+  padding: .7rem 1.4rem;
 }
 
-/* Si quieres dos campos en línea (nombre + correo) en pantallas grandes,
-   añade la clase .two-cols alrededor de esos inputs en el HTML.
-   Ejemplo:
-   <div class="two-cols">
-     <div><label>Nombre</label><input></div>
-     <div><label>Correo</label><input></div>
-   </div>
-*/
-.intro .contact-form .two-cols {
+/* Dos columnas dentro del form */
+.two-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-/* Información lateral */
-.contact-info h3 { margin-bottom: 1rem; color: #ff9f1c; text-shadow: 0 0 6px rgba(255,159,28,0.6); }
-.contact-info p { margin: 0.5rem 0; color: #ddd; }
+.contact-info h3 { margin-bottom: 1rem; text-shadow: 0 0 6px rgba(255,159,28,.6); }
+.contact-info p { margin: .5rem 0; }
 
 /* Footer */
 .main-footer {
-  background: #000;
-  color: #f8f8f8;
   text-align: center;
   padding: 1.5rem;
   margin-top: 2rem;
-  font-size: 0.9rem;
-  width: 100%;
-  border-top: 1px solid #222;
+  font-size: .9rem;
 }
 
-/* Redes sociales laterales */
+/* Redes */
 .side-social-icons {
   position: fixed;
   bottom: 2rem;
@@ -280,27 +251,24 @@ body::before {
 }
 
 .side-social-icons .social-icon {
-  color: #f0f0f0;
   font-size: 1.8rem;
-  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+  transition: .3s;
 }
-
 .side-social-icons .social-icon:hover {
-  color: #ff9f1c;
+  color: #11f693;
   transform: translateY(-3px) scale(1.1);
-  text-shadow: 0 0 10px #ff9f1c;
+  text-shadow: 0 0 10px #ceff1c;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
   .content { padding: 2rem 1rem; }
-  .intro { padding: 1.8rem; margin: 1rem; border-radius: 12px; }
+  .intro { padding: 1.8rem; margin: 1rem; }
   .contact-grid { grid-template-columns: 1fr; }
-  .header-content { padding: 0 1rem; }
   .logo-text { font-size: 1.8rem; }
 }
 
 @media (max-width: 480px) {
   .section-title { font-size: 1.9rem; }
-  .nav-links { gap: 12px; font-size: 0.95rem; }
+  .nav-links { gap: 12px; font-size: .95rem; }
 }

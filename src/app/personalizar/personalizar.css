@@ -12,7 +12,7 @@ html, body {
   width: 100%;
   min-height: 100vh;
   background-color: #0d0d0d;
-  background: url('/assets/goma.jpg') no-repeat center center fixed;
+  background: url('/assets/fondo5.jpg') no-repeat center center fixed;
   background-size: cover;
   line-height: 1.6;
   overflow-x: hidden;
@@ -36,7 +36,8 @@ body::before {
 .hero {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 1.5rem 2rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  box-shadow: 0 3px 10px rgba(255, 0, 0, 0.7);
+
   width: 100%;
   position: sticky;
   top: 0;
@@ -266,7 +267,7 @@ body::before {
   margin-top: 2rem;
   font-size: 0.9rem;
   width: 100%;
-  border-top: 1px solid #ffffff;
+  border-top: 1px solid #ffffff00;
 }
 
 /* Iconos sociales laterales */
