@@ -2,13 +2,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService, Product } from '../services/cart.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ProfileIconComponent } from '../shared/profile-icon/profile-icon.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-carrito',
   standalone: true,
-  imports: [CommonModule, RouterModule, ProfileIconComponent],
+  imports: [CommonModule, RouterModule, ProfileIconComponent, FormsModule],
   templateUrl: './carrito.html',
   styleUrls: ['./carrito.css']
 })
@@ -16,8 +17,9 @@ export class Carrito {
   cart: Product[] = [];
   showSummary = false;
   totalCompra = 0;
+  paymentMethod = '';
 
-  constructor(public cartService: CartService) {
+  constructor(public cartService: CartService, private router: Router) {
     this.cart = this.cartService.getCart();
     this.cartService.cart$.subscribe(updatedCart => {
       this.cart = updatedCart;
@@ -49,8 +51,13 @@ export class Carrito {
 
   // Confirmar compra
   confirmPurchase() {
-    alert(`✅ Compra confirmada por un total de $${this.totalCompra.toLocaleString()}`);
-    this.cartService.clearCart();
-    this.closeSummary();
+    if (this.paymentMethod === 'nequi') {
+      this.router.navigate(['/pago-nequi']);
+      this.closeSummary();
+    } else {
+      alert(`✅ Compra confirmada por un total de $${this.totalCompra.toLocaleString()}`);
+      this.cartService.clearCart();
+      this.closeSummary();
+    }
   }
 }
