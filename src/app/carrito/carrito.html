@@ -84,7 +84,7 @@
 
       <form (submit)="confirmPurchase()">
 
-        <input type="text" placeholder="Dirección de entrega" required>
+        <input type="text" placeholder="Dirección de entrega" [(ngModel)]="address" name="address" required>
         <select [(ngModel)]="paymentMethod" name="paymentMethod" required>
           <option value="">Método de pago</option>
           <option value="tarjeta">Tarjeta de crédito</option>

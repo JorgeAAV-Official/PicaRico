@@ -18,6 +18,7 @@ export class Carrito {
   showSummary = false;
   totalCompra = 0;
   paymentMethod = '';
+  address = '';
 
   constructor(public cartService: CartService, private router: Router) {
     this.cart = this.cartService.getCart();
@@ -52,6 +53,7 @@ export class Carrito {
   // Confirmar compra
   confirmPurchase() {
     if (this.paymentMethod === 'nequi') {
+      this.cartService.setShippingAddress(this.address);
       this.router.navigate(['/pago-nequi']);
       this.closeSummary();
     } else {

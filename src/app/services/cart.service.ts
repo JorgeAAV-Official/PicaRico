@@ -28,6 +28,7 @@ export class CartService {
   private cart: Product[] = [];
   public cart$ = new BehaviorSubject<Product[]>([]);
   private userUid: string | null = null;
+  private shippingAddress: string = '';
 
   constructor(private firestore: Firestore, private auth: Auth) {
     // Escuchar cambios de autenticación en tiempo real
@@ -126,5 +127,13 @@ export class CartService {
 
     this.cart = [];
     this.cart$.next([]);
+  }
+
+  setShippingAddress(address: string) {
+    this.shippingAddress = address;
+  }
+
+  getShippingAddress() {
+    return this.shippingAddress;
   }
 }
