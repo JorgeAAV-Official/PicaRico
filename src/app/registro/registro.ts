@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Auth, createUserWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
 import { Firestore, doc, setDoc } from '@angular/fire/firestore';
+import { ProfileIconComponent } from '../shared/profile-icon/profile-icon.component';
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [FormsModule, RouterModule, CommonModule],
+  imports: [FormsModule, RouterModule, CommonModule, ProfileIconComponent],
   templateUrl: './registro.html'
 })
 export class Registro {
@@ -24,7 +25,7 @@ export class Registro {
   constructor(
     private auth: Auth,
     private firestore: Firestore
-  ) {}
+  ) { }
 
   async onSubmit() {
     this.errorMessage = '';

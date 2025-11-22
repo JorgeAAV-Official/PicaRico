@@ -1,0 +1,158 @@
+/* Ícono de perfil */
+.profile-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-right: 15px; /* Espacio entre ícono usuario y carrito */
+}
+
+.logged-out-icon {
+  color: #fff; /* Blanco por defecto */
+}
+
+.logged-in-icon {
+  color: #4caf50; /* Verde si está logueado */
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ============================
+   MODALES (LOGIN / PERFIL)
+============================ */
+.modal {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Encima de todo */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  color: #e63946;
+}
+
+.modal-content h3 {
+  margin-bottom: 1.5rem;
+  font-family: 'Anton', sans-serif;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+/* Inputs del Login */
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.modal-content input:focus {
+  border-color: #ff9f1c;
+  outline: none;
+}
+
+/* Botón Ingresar */
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff9f1c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #e68a00;
+}
+
+/* Texto Registrarse */
+.register-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.register-text a {
+  color: #e63946;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* Mensaje de error */
+.login-error {
+  color: #e63946;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Caja de usuario logueado */
+.logged-in-box {
+  border-top: 5px solid #4caf50;
+}
+
+.user-email {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.btn-logout {
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-logout:hover {
+  background-color: #c92a36;
+}

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { ProfileIconComponent } from '../shared/profile-icon/profile-icon.component';
 
 @Component({
   selector: 'app-personalizar',
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule],
+  imports: [CommonModule, FormsModule, IonicModule, ProfileIconComponent],
   templateUrl: './personalizar.html',
   styleUrls: ['./personalizar.css']
 })

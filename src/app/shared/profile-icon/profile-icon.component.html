@@ -1,0 +1,44 @@
+<!-- Ícono de perfil dinámico -->
+<i class="fas fa-user profile-icon" [ngClass]="{ 'logged-in-icon': user, 'logged-out-icon': !user }"
+    (click)="toggleLoginModal()">
+</i>
+
+<!-- ============================
+     MODAL NO LOGUEADO
+============================ -->
+<div class="modal" *ngIf="showLoginModal && !user">
+    <div class="modal-content">
+        <span class="close-btn" (click)="toggleLoginModal()">&times;</span>
+        <h3>Inicia sesión</h3>
+
+        <form (ngSubmit)="login()">
+            <input type="email" placeholder="Correo" [(ngModel)]="email" name="email" required>
+
+            <input type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+
+            <p class="login-error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+            <button type="submit" class="btn-login">Ingresar</button>
+        </form>
+
+        <p class="register-text">
+            ¿No tienes cuenta?
+            <a [routerLink]="['/registro']" (click)="toggleLoginModal()">Registrarse</a>
+        </p>
+    </div>
+</div>
+
+<!-- ============================
+     MODAL LOGUEADO
+============================ -->
+<div class="modal" *ngIf="showLoginModal && user">
+    <div class="modal-content logged-in-box">
+        <span class="close-btn" (click)="toggleLoginModal()">&times;</span>
+
+        <h3>Perfil</h3>
+
+        <p class="user-email">Correo:<br> <strong>{{ user.email }}</strong></p>
+
+        <button class="btn-logout" (click)="logout()">Cerrar sesión</button>
+    </div>
+</div>

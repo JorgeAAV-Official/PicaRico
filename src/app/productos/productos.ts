@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CartService, Product } from '../services/cart.service';
+import { ProfileIconComponent } from '../shared/profile-icon/profile-icon.component';
 
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, ProfileIconComponent],
   templateUrl: './productos.html',
   styleUrls: ['./productos.css']
 })
@@ -17,7 +18,7 @@ export class Productos {
   // 🔽 Variable para guardar la categoría seleccionada
   categoriaSeleccionada: string = 'todas';
 
-  constructor(public cartService: CartService) {}
+  constructor(public cartService: CartService) { }
 
   // Método para agregar producto al carrito con validación de sesión
   async addToCart(name: string, price: number, description: string, image: string) {

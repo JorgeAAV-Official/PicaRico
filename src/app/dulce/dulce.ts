@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CartService, Product } from '../services/cart.service';
+import { ProfileIconComponent } from '../shared/profile-icon/profile-icon.component';
 
 @Component({
   selector: 'app-dulce',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, ProfileIconComponent],
   templateUrl: './dulce.html',
   styleUrls: ['./dulce.css']
 })
@@ -16,7 +17,7 @@ export class Dulce {
 
   categoriaSeleccionada: string = 'todas';
 
-  constructor(public cartService: CartService) {}
+  constructor(public cartService: CartService) { }
 
   async addToCart(name: string, price: number, description: string, image: string) {
 

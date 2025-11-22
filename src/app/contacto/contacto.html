@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto - PicaRico</title>
   <link rel="stylesheet" href="contacto.css">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="hero">
@@ -17,7 +20,7 @@
       </div>
       <ul class="nav-links">
         <li><a [routerLink]="['/principal']">Inicio</a></li>
-        
+        <app-profile-icon></app-profile-icon>
       </ul>
     </div>
   </header>
@@ -27,7 +30,7 @@
     <section class="intro">
       <h2 class="section-title">¡Hablemos de sabor!</h2>
       <p class="section-description">
-        Si tienes dudas, comentarios o simplemente quieres saludarnos, completa el formulario 
+        Si tienes dudas, comentarios o simplemente quieres saludarnos, completa el formulario
         o contáctanos por nuestras redes.
       </p>
       <div class="contact-grid">
@@ -59,4 +62,5 @@
     © 2025 PicaRico. Todos los derechos reservados.
   </footer>
 </body>
+
 </html>

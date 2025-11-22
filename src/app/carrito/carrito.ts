@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService, Product } from '../services/cart.service';
 import { RouterModule } from '@angular/router';
+import { ProfileIconComponent } from '../shared/profile-icon/profile-icon.component';
 
 @Component({
   selector: 'app-carrito',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ProfileIconComponent],
   templateUrl: './carrito.html',
   styleUrls: ['./carrito.css']
 })
