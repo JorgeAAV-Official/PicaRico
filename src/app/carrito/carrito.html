@@ -80,6 +80,7 @@
       </div>
 
       <hr style="margin: 12px 0; border-color: rgba(255,159,28,0.2);" />
+      <p>Domicilio: $3,000</p>
       <p><strong>Total:</strong> ${{ totalCompra | number }}</p>
 
       <form (submit)="confirmPurchase()">
@@ -87,7 +88,6 @@
         <input type="text" placeholder="Dirección de entrega" [(ngModel)]="address" name="address" required>
         <select [(ngModel)]="paymentMethod" name="paymentMethod" required>
           <option value="">Método de pago</option>
-          <option value="tarjeta">Tarjeta de crédito</option>
           <option value="efectivo">Efectivo</option>
           <option value="nequi">Nequi</option>
         </select>

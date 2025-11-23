@@ -18,7 +18,7 @@ export class PagoNequi {
 
   getWhatsappLink(): string {
     const cart = this.cartService.getCart();
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0) + 3000;
     const address = this.cartService.getShippingAddress();
     const user = this.auth.currentUser;
     const userName = user?.displayName || 'Cliente';
@@ -29,6 +29,7 @@ export class PagoNequi {
       message += `- ${item.name} x${item.quantity} ($${item.price * item.quantity})\n`;
     });
 
+    message += `Domicilio: $3000\n`;
     message += `\nTotal a pagar: $${total}\n`;
 
     if (address) {
