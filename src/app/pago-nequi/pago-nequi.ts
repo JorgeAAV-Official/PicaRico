@@ -44,4 +44,8 @@ export class PagoNequi {
 
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   }
+
+  finalizePurchase() {
+    this.cartService.clearCart();
+  }
 }

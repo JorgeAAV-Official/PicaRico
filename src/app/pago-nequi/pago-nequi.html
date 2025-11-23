@@ -60,7 +60,8 @@
             </div>
             <br>
 
-            <a [href]="getWhatsappLink()" class="btn" target="_blank">Enviar Comprobante</a>
+            <a [href]="getWhatsappLink()" (click)="finalizePurchase()" class="btn" target="_blank">Enviar
+                Comprobante</a>
         </section>
     </main>
 
